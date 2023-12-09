@@ -48,7 +48,7 @@ class ExcelImportAction extends Action
     {
         return [
             FileUpload::make('upload')
-                ->label(fn ($livewire) => str($livewire->getTable()->getPluralModelLabel())->title() . ' ' . __('Excel Data'))
+                ->label(fn ($livewire) => __('اكسل بيانات') . ' ' . str($livewire->getTable()->getPluralModelLabel())->title())
                 ->default(1)
                 ->disk($this->getDisk())
                 ->columns()
@@ -67,8 +67,8 @@ class ExcelImportAction extends Action
             ->color('success')
             ->modalWidth('md')
             ->modalAlignment('center')
-            ->modalHeading(fn ($livewire) => __('Import Excel'))
-            ->modalDescription(__('Import data into database from excel file'))
+            ->modalHeading(fn ($livewire) => __('ادخال اكسل'))
+            ->modalDescription(__('ادخال البيانات من خلال ملف اكسل'))
             ->modalFooterActionsAlignment('right')
             ->closeModalByClickingAway(false)
             ->action('importData');
