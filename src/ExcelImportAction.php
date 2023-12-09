@@ -19,7 +19,6 @@ class ExcelImportAction extends Action
     {
         $this->importClass = $class ?: DefaultImport::class;
         $this->importClassAttributes = $attributes;
-
         return $this;
     }
 
